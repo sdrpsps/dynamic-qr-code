@@ -2,7 +2,7 @@
 
 import { deleteQRCode, getAllQRCodes } from "@/app/actions/qrcode";
 import { Button } from "@/components/ui/button";
-import type { QRCode as QRCodeType } from "@/db/schema";
+import type { QRCode as QRCodeType } from "@/lib/db/schema";
 import { toast } from "@/hooks/use-toast";
 import { useGlobalStore } from "@/stores/globalStore";
 import { DownloadIcon, FilePenLineIcon, Loader, Trash2Icon } from "lucide-react";

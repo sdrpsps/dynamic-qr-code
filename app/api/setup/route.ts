@@ -1,6 +1,6 @@
 import { createUser } from "@/app/actions/auth";
-import { db } from "@/db";
-import { users } from "@/db/schema";
+import { db } from "@/lib/db";
+import { users } from "@/lib/db/schema";
 import { eq } from "drizzle-orm";
 import { NextResponse } from "next/server";
 

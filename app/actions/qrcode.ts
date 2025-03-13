@@ -1,7 +1,7 @@
 'use server'
 
-import { db } from '@/db'
-import { qrcodes } from '@/db/schema'
+import { db } from '@/lib/db'
+import { qrcodes } from '@/lib/db/schema'
 import { eq } from 'drizzle-orm'
 
 // 生成随机字符串的函数

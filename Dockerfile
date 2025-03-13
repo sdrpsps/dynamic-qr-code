@@ -17,6 +17,10 @@ RUN pnpm install --frozen-lockfile
 # Copy the rest of the application
 COPY . .
 
+RUN sed -i 's/const nextConfig: NextConfig = {};/const nextConfig: NextConfig = { output: "standalone" };/' next.config.ts
+
+RUN rm lib/db/index.ts && mv lib/db/index-docker.ts lib/db/index.ts
+
 # Initialize database and run migrations
 RUN mkdir data
 

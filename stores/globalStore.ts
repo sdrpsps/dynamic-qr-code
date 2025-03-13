@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import type { QRCode } from "@/db/schema";
+import type { QRCode } from "@/lib/db/schema";
 
 interface GlobalStore {
   uploadUrl: string;

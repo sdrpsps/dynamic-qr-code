@@ -1,8 +1,8 @@
 "use server";
 
 import { authOptions } from "@/lib/auth";
-import { db } from "@/db";
-import { users } from "@/db/schema";
+import { db } from "@/lib/db";
+import { users } from "@/lib/db/schema";
 import { compare, hash } from "bcryptjs";
 import { eq } from "drizzle-orm";
 import { getServerSession } from "next-auth/next";
