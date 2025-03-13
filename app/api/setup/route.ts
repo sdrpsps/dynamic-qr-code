@@ -1,12 +1,13 @@
 import { createUser } from "@/app/actions/auth";
+import { USER_PASSWORD, USER_USERNAME } from "@/lib/config";
 import { db } from "@/lib/db";
 import { users } from "@/lib/db/schema";
 import { eq } from "drizzle-orm";
 import { NextResponse } from "next/server";
 
 const DEFAULT_USER = {
-  username: process.env.USER_USERNAME || "admin",
-  password: process.env.USER_PASSWORD || "password123",
+  username: USER_USERNAME || "admin",
+  password: USER_PASSWORD || "password123",
 };
 
 export async function GET() {

@@ -1,11 +1,11 @@
-import { isTurso } from "./lib/config";
+import { isTurso, TURSO_AUTH_TOKEN, TURSO_DATABASE_URL } from "./lib/config";
 
 export default {
   schema: "lib/db/schema.ts",
   out: "lib/db/migrations",
   dialect: isTurso ? "turso" : "sqlite",
   dbCredentials: {
-    url: isTurso ? process.env.TURSO_DATABASE_URL : "./data/sqlite.db",
-    authToken: isTurso ? process.env.TURSO_AUTH_TOKEN : undefined,
+    url: isTurso ? TURSO_DATABASE_URL : "./data/sqlite.db",
+    authToken: isTurso ? TURSO_AUTH_TOKEN : undefined,
   },
 };

@@ -1,3 +1,4 @@
+import { APP_DOMAIN, LOGO_URL } from "@/lib/config";
 import { NextResponse } from "next/server";
 import QRCode from 'qrcode';
 import sharp from 'sharp';
@@ -8,7 +9,7 @@ let logoBuffer: Buffer | null = null;
 async function getLogoBuffer() {
   if (logoBuffer) return logoBuffer;
   
-  const logoUrl = process.env.QR_LOGO_URL;
+  const logoUrl = LOGO_URL;
   if (!logoUrl) return null;
 
   try {
@@ -39,7 +40,7 @@ export async function GET(
 ) {
   try {
     const shortCode = (await params).shortCode;
-    const shortUrl = `${process.env.APP_DOMAIN}/s/${shortCode}`;
+    const shortUrl = `${APP_DOMAIN}/s/${shortCode}`;
 
     // 生成二维码
     const qrBuffer = await QRCode.toBuffer(shortUrl, {
